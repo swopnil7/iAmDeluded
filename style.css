@@ -112,7 +112,7 @@ nav {
 .navlinks {
     padding-right: 2rem;
     display: flex;
-    gap: 4rem;
+    gap: 3rem;
 }
 
 .navlinks > span {
@@ -482,50 +482,6 @@ main {
     color: var(--crust);
 }
 
-@media (max-width: 600px) {
-    .project-card {
-        max-width: 98vw;
-        border-radius: 12px;
-    }
-    .project-card-header {
-        min-height: 140px;
-    }
-    .project-image {
-        width: 98%;
-        border-radius: 12px;
-        margin-top: 10px;
-    }
-    .project-icon {
-        width: 56px;
-        height: 56px;
-        right: 12px;
-        bottom: -22px;
-        border-radius: 12px;
-    }
-    .project-card-body {
-        padding: 32px 12px 18px 12px;
-        gap: 10px;
-    }
-    .project-title {
-        font-size: 1.3rem;
-    }
-    .project-tags {
-        gap: 6px;
-    }
-    .tag {
-        font-size: 0.85rem;
-        padding: 3px 10px;
-        border-radius: 4px;
-    }
-    .project-description {
-        font-size: 0.95rem;
-    }
-    .btn, .btn-secondary {
-        font-size: 0.95rem;
-        padding: 8px 14px;
-        border-radius: 6px;
-    }
-}
 
 /* f */
 @media (max-width: 820px) {
@@ -654,16 +610,100 @@ main {
     }
     #skills h1 {
         font-size: 2rem;
+        margin-bottom: 30px;
     }
     .skills-list {
         grid-template-columns: repeat(2, 1fr);
-        margin: 20px 20px 50px 20px;
+        margin: 20px 10px 50px 20px;
     }
     .skill-box {
         padding: 14px;
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     .skill-box i {
         font-size: 2rem;
+    }
+
+    /* more compact project card styles for smaller screens */
+
+    #projects h1 {
+        font-size: 2rem;
+        margin-bottom: 0px;
+    }
+
+    .project-holder {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+    .project-card {
+        max-width: 100%;
+        min-width: 90%;
+        margin: 16px 0; /* Reduced vertical margin for less space between cards */
+        min-height: 500px;
+    }
+    .project-card-header {
+        min-height: 180px; /* Reduced height for smaller screens */
+    }
+    .project-image {
+        height: 180px; /* Adjusted height for smaller screens */
+    }
+    .project-icon {
+        width: 60px;
+        height: 60px;
+        right: 16px;
+        bottom: -24px;
+    }
+    .project-card-body {
+        padding: 36px 20px 20px 20px; /* Adjusted padding for smaller screens */
+    }
+    .project-title {
+        font-size: 1.8rem;
+        margin: -20px 0 -10px 0;
+    }
+    .project-tags {
+        flex-wrap: wrap; /* Allow tags to wrap on smaller screens */
+        justify-content: center; /* Center tags */
+    }
+    .tag {
+        font-size: 0.9rem;
+        padding: 2px 6px; /* Reduced padding for smaller screens */
+    }
+    .project-description {
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 0;
+        margin-top: -10px;
+    }
+    .project-actions {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        margin-top: auto; /* Push actions to the bottom */
+        margin-bottom: -15px;
+        justify-content: center;
+        position: relative;
+        left: 0;
+        right: 0;
+        bottom: 10px;
+        width: 100%;
+    }
+    .project-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 500px; /* Ensure enough height for absolute positioning */
+    }
+    .btn {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+    .btn-secondary {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+    .btn-secondary:hover, .btn-secondary:focus {
+        background: var(--lavender);
+        color: var(--crust);
     }
 }
