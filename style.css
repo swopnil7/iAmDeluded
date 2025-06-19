@@ -487,8 +487,8 @@ main {
 @media (max-width: 820px) {
     
     header {
-        padding: 10px 5px; /* Reduced padding for smaller screens */
-        min-height: 60px; /* Increased height for larger header */
+        padding: 10px 5px;
+        min-height: 60px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -624,8 +624,6 @@ main {
         font-size: 2rem;
     }
 
-    /* more compact project card styles for smaller screens */
-
     #projects h1 {
         font-size: 2rem;
         margin-bottom: 0px;
@@ -639,14 +637,14 @@ main {
     .project-card {
         max-width: 100%;
         min-width: 90%;
-        margin: 16px 0; /* Reduced vertical margin for less space between cards */
+        margin: 16px 0;
         min-height: 500px;
     }
     .project-card-header {
-        min-height: 180px; /* Reduced height for smaller screens */
+        min-height: 180px;
     }
     .project-image {
-        height: 180px; /* Adjusted height for smaller screens */
+        height: 180px;
     }
     .project-icon {
         width: 60px;
@@ -655,19 +653,19 @@ main {
         bottom: -24px;
     }
     .project-card-body {
-        padding: 36px 20px 20px 20px; /* Adjusted padding for smaller screens */
+        padding: 36px 20px 50px 20px;
     }
     .project-title {
         font-size: 1.8rem;
         margin: -20px 0 -10px 0;
     }
     .project-tags {
-        flex-wrap: wrap; /* Allow tags to wrap on smaller screens */
-        justify-content: center; /* Center tags */
+        flex-wrap: wrap;
+        justify-content: center;
     }
     .tag {
         font-size: 0.9rem;
-        padding: 2px 6px; /* Reduced padding for smaller screens */
+        padding: 2px 6px;
     }
     .project-description {
         font-size: 1rem;
@@ -679,8 +677,8 @@ main {
         flex-direction: row;
         align-items: center;
         gap: 10px;
-        margin-top: auto; /* Push actions to the bottom */
-        margin-bottom: -15px;
+        margin-top: auto;
+        margin-bottom: -50px;
         justify-content: center;
         position: relative;
         left: 0;
@@ -692,7 +690,7 @@ main {
         position: relative;
         display: flex;
         flex-direction: column;
-        min-height: 500px; /* Ensure enough height for absolute positioning */
+        min-height: 500px;
     }
     .btn {
         font-size: 1rem;
