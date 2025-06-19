@@ -1,0 +1,669 @@
+:root {
+    --og: #c39ff1;
+    --rosewater: #f5e0dc;
+    --flamingo: #f2cdcd;
+    --pink: #f5c2e7;
+    --mauve: #cba6f7;
+    --red: #f38ba8;
+    --maroon: #eba0ac;
+    --peach: #fab387;
+    --yellow: #f9e2af;
+    --green: #a6e3a1;
+    --teal: #94e2d5;
+    --sky: #89dceb;
+    --sapphire: #74c7ec;
+    --blue: #89b4fa;
+    --lavender: #b4befe;
+    --text: #cdd6f4;
+    --subtext1: #bac2de;
+    --subtext0: #a6adc8;
+    --overlay2: #9399b2;
+    --overlay1: #7f849c;
+    --overlay0: #6c7086;
+    --surface2: #585b70;
+    --surface1: #45475a;
+    --surface0: #313244;
+    --base: #1e1e2e;
+    --mantle: #272739e5;
+    --crust: #11111b;
+}
+
+body {
+    background-color: var(--base);
+    color: var(--text);
+    font-family: 'Fira Code', monospace;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    background-color: var(--crust);
+    color: var(--text);
+    padding: 18px 10px 18px 10px; /* More vertical padding for larger header */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 30px; /* Increased height for larger header */
+}
+
+nav {
+    background-color: var(--mantle);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 0 0.5rem;
+    border: 1px solid var(--og);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    position: fixed;
+    width: 97%;
+    top: 5px; /* 5px margin from top (inside header) */
+    left: 0;
+    right: 0;
+    margin: 0 auto; /* Center the navbar horizontally */
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items:center;
+    gap: 0.5rem;
+}
+
+.favicon {
+    width: 32px;
+    height: 32px;
+    margin: 0;
+    align-self: center;
+}
+
+.text-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.tt {
+    font-size: 1.5rem;
+    color: var(--text);
+    font-weight: bold;
+    margin: 5px 0 0 0; 
+    line-height: 1.1;
+    text-align: left;
+}
+
+.st {
+    font-size: 0.8rem;
+    color: var(--subtext1);
+    margin: 0 0 5px 0;
+    line-height: 1.1;
+    text-align: left;
+}
+
+.navlinks {
+    padding-right: 2rem;
+    display: flex;
+    gap: 4rem;
+}
+
+.navlinks > span {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navlinks > span > button {
+    background: none;
+    border: none;
+    color: var(--text);
+    font: inherit;
+    font-weight: bolder;
+    font-size: large;
+    cursor: pointer;
+    padding: 0.3rem 0.6rem; /* Consistent padding */
+    margin: 0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    outline: none;
+}
+.navlinks > span > button.active {
+    background-color: var(--crust);
+    color: var(--lavender);
+    border-radius: 2px;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navlinks > span > button:hover:not(.active) {
+    color: var(--og);
+    transform: scale(1.05);
+    transition: color 0.3s ease, transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+#intro {
+    padding: 9rem 3rem;
+    background-color: var(--mantle);
+    font-family: 'Fira Code', monospace;
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--text);
+    text-align: left;
+    letter-spacing: -2px;
+    line-height: 1.1;
+}
+
+#intro p {
+    font-size: 3rem;
+    color: var(--subtext1);
+    margin-top: -60px;
+    margin-bottom: 0;
+    line-height: 1.1;
+}
+
+.socials {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 20px;                /* space between icons */
+  width: 100%;              /* take full width of parent */
+  padding: 0 0;          /* vertical space above/below icons */
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;              /* make icons in a circle */
+  height: 72px;
+  border-radius: 50%;     /* icon background */
+  color: #fff;              /* icon color */
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  font-size: 2.5rem;        /* icon size */
+}
+
+.socials a:hover {
+    background-color: var(--crust);
+    color: var(--lavender);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+#btn-down {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 3rem auto -45px auto;
+    left: 0;
+    right: 0;
+    bottom: 4rem;
+    width: 80px;
+    height: 80px;
+    z-index: 10;
+}
+
+#btn-down i {
+    font-size: 50px;
+    color: #cdd6f4;
+    opacity: 0.7;
+    transition: color 0.2s, opacity 0.2s, transform 0.2s;
+}
+
+#btn-down:hover i {
+    color: #b4befe;
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+#skills,
+#projects {
+    margin-top: 10px;
+    background-color: var(--mantle);
+    font-family: 'Fira Code', monospace;
+    font-size: 2.5rem;
+    color: var(--text);
+    text-align: center;
+}
+
+#skills h1,
+#projects h1 {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 3rem;
+    font-weight: bolder;
+    color: var(--text);
+    margin: 2rem 0 1rem 0;
+    text-align: center;
+    letter-spacing: -1px;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 20px 50px 50px 50px;
+}
+
+.skill-box {
+    background: rgb(58, 55, 91);
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #c3c6f7;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    letter-spacing: -1px;
+}
+
+.skill-box i {
+    font-size: 3rem;
+    color: var(--text);
+    transition: transform 0.2s, color 0.2s;
+}
+
+/* Project Card Container for Horizontal Scroll */
+.project-holder {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 2.3rem;
+    overflow-x: auto;
+    padding: 2rem 2.5rem;
+    scroll-behavior: smooth;
+    /* Optional: hide vertical scrollbar */
+    overflow-y: hidden;
+}
+
+/* Hide scrollbar for all browsers */
+.project-holder {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+.project-holder::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* Auto-scroll animation */
+/* Note: CSS cannot animate scroll-left; use JavaScript for auto-scrolling if needed. */
+/* Removed invalid animation to prevent errors. */
+
+/* Project Card Styles */
+.project-card {
+    background: var(--surface0);
+    border-radius: 18px;
+    box-shadow: 0 6px 32px 0 rgba(30, 32, 46, 0.25), 0 1.5px 4px 0 rgba(0,0,0,0.10);
+    overflow: hidden;
+    max-width: 370px;
+    min-width: 320px;
+    margin: 0; /* Remove auto margin for horizontal layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;;
+    transition: transform 0.18s cubic-bezier(.4,0,.2,1), box-shadow 0.18s cubic-bezier(.4,0,.2,1);
+    border: 1.5px solid var(--surface2);
+    position: relative;
+    flex-shrink: 0; /* Prevent shrinking in flex row */
+}
+
+.project-card-header {
+    position: relative;
+    background: var(--surface2);
+    padding: 0;
+    min-height: 220px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: visible;
+}
+
+.project-badge {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    background: var(--mantle);
+    color: var(--lavender);
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 6px 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    z-index: 2;
+    letter-spacing: 1px;
+}
+
+.project-image {
+    width: 100%;
+    margin: 0;
+    box-shadow: 0 4px 24px 0 rgba(30, 32, 46, 0.18);
+    display: block;
+    z-index: 1;
+    position: relative;
+    object-fit: cover; /* Ensures the image covers the entire area */
+    height: 220px;     /* Set a fixed height for consistent card images */
+    object-position: center; /* Center the image within the container */
+}
+
+.project-icon {
+    position: absolute;
+    right: 24px;
+    bottom: -32px;
+    width: 80px;
+    height: 80px;
+    border-radius: 22px;
+    box-shadow: 0 4px 24px 0 rgba(30, 32, 46, 0.18);
+    background: var(--surface1);
+    border: 3px solid var(--surface2);
+    z-index: 3;
+}
+
+.project-card-body {
+    padding: 48px 28px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.project-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text);
+    margin: 0 10px 0 0;
+    letter-spacing: -1px;
+    align-self: flex-start;
+}
+
+.project-tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.tag {
+    background: var(--surface2);
+    color: var(--lavender);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+    letter-spacing: 0px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.project-description {
+    color: var(--subtext1);
+    font-size: 1.08rem;
+    text-align: left;
+    line-height: 1.5;
+    margin: 0 0 10px 0;
+}
+
+.project-actions {
+    display: flex;
+    gap: 16px;
+    left: 28px;
+    right: 28px;
+    bottom: 20px;
+    justify-content: center;
+    align-items: flex-end;
+    background: transparent;
+    z-index: 2;
+    width: auto;
+    gap: 16px;
+    margin-top: auto;
+    margin-bottom: -30px;
+}
+
+.project-card-body {
+    padding: 48px 28px 68px 28px; /* extra bottom padding for buttons */
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto; /* Allow the body to grow and fill space */
+    gap: 18px;
+    position: relative;
+    min-height: 220px;
+}
+
+.btn {
+    background: var(--lavender);
+    color: var(--crust);
+    font-weight: 700;
+    font-size: 1.08rem;
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn:hover, .btn:focus {
+    background: var(--og);
+    color: var(--crust);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.16);
+}
+
+.btn-secondary {
+    background: var(--surface2);
+    color: var(--lavender);
+    border: 1.5px solid var(--lavender);
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+    background: var(--lavender);
+    color: var(--crust);
+}
+
+@media (max-width: 600px) {
+    .project-card {
+        max-width: 98vw;
+        border-radius: 12px;
+    }
+    .project-card-header {
+        min-height: 140px;
+    }
+    .project-image {
+        width: 98%;
+        border-radius: 12px;
+        margin-top: 10px;
+    }
+    .project-icon {
+        width: 56px;
+        height: 56px;
+        right: 12px;
+        bottom: -22px;
+        border-radius: 12px;
+    }
+    .project-card-body {
+        padding: 32px 12px 18px 12px;
+        gap: 10px;
+    }
+    .project-title {
+        font-size: 1.3rem;
+    }
+    .project-tags {
+        gap: 6px;
+    }
+    .tag {
+        font-size: 0.85rem;
+        padding: 3px 10px;
+        border-radius: 4px;
+    }
+    .project-description {
+        font-size: 0.95rem;
+    }
+    .btn, .btn-secondary {
+        font-size: 0.95rem;
+        padding: 8px 14px;
+        border-radius: 6px;
+    }
+}
+
+/* f */
+@media (max-width: 820px) {
+    
+    header {
+        padding: 10px 5px; /* Reduced padding for smaller screens */
+        min-height: 60px; /* Increased height for larger header */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    nav {
+        min-height: 50px;
+        padding: 0;
+        margin-top: 5px;
+        font-size: 2rem;
+        width: 95vw;
+        top: 10px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: 1.5px solid var(--lavender);
+        border-radius: 10px;
+        box-shadow: none;
+        background-color: var(--mantle);
+        position: fixed;
+        z-index: 1000;
+    }
+    .logo {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+    }
+    .logo .favicon,
+    .logo .text-group,
+    .logo {
+        display: flex;
+        margin-right: 10px;
+    }
+    .st {
+        display: none;
+    }
+    .tt {
+        font-size: 2rem;
+        color: var(--lavender);
+        font-weight: 900;
+        margin: 0 auto;
+        text-align: center;
+        letter-spacing: 2px;
+        width: 100%;
+        display: block;
+    }
+    .navlinks {
+        display: none;
+    }
+    #intro {
+        padding: 4rem 1rem;
+        font-size: 2rem;
+    }
+    #intro h1 {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+    }
+    #intro p {
+        font-size: 1.2rem;
+        margin-top: -20px;
+    }
+    .socials {
+        gap: 10px;
+        margin-top: 10px;
+        margin-bottom: 4rem;
+    }
+    .socials a {
+        width: 44px;
+        height: 44px;
+        font-size: 1.3rem;
+        border-radius: 50%;
+        color: var(--text);
+        text-decoration: none;
+        transition: background 0.2s, color 0.2s;
+    }
+    .socials a:hover {
+    background-color: var(--crust);
+    color: var(--lavender);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    }
+
+    #btn-down {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin: 2rem auto -30px auto;
+        left: 0;
+        right: 0;
+        bottom: 2rem;
+        width: 48px;
+        height: 48px;
+        z-index: 10;
+    }
+
+    #btn-down i {
+        font-size: 28px;
+        color: #cdd6f4;
+        opacity: 0.7;
+        transition: color 0.2s, opacity 0.2s, transform 0.2s;
+    }
+
+    #btn-down:hover i {
+        color: #b4befe;
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    #skills {
+        font-size: 1.5rem;
+    }
+    #skills h1 {
+        font-size: 2rem;
+    }
+    .skills-list {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 20px 20px 50px 20px;
+    }
+    .skill-box {
+        padding: 14px;
+        font-size: 1.2rem;
+    }
+    .skill-box i {
+        font-size: 2rem;
+    }
+}

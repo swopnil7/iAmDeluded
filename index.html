@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swopnil's Portfolio</title>
+    <link rel="icon" type="image/png" href="Images/Icon.png">
+</head>
+<body>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/ebee46d46d.js" crossorigin="anonymous"></script>
+    <header>
+        <nav>
+        <!-- The logo and title of the portfolio -->
+        <div class="logo">
+            <img src="Images/Icon.png" alt="favicon" class="favicon">
+            <div><h1 class="tt">Swopnil.</h1>
+            <h4 class="st">Aka, iAmDeluded</h4>
+            </div>
+        </div>
+        <!-- Navigation links -->
+        <div class="navlinks">
+            <span>
+            <button id="btn-intro" type="button" onclick="const target = document.getElementById('intro'); const y = target.getBoundingClientRect().top + window.pageYOffset - 100; window.scrollTo({ top: y, behavior: 'smooth'});">This is Me</button>
+            </span>
+            <span>
+            <button id="btn-skills" type="button" onclick="const target = document.getElementById('skills'); const y = target.getBoundingClientRect().top + window.pageYOffset - 100; window.scrollTo({ top: y, behavior: 'smooth'});">My Skills</button>
+            </span>
+            <span>
+            <button id="btn-projects" type="button" onclick="const target = document.getElementById('projects'); const y = target.getBoundingClientRect().top + window.pageYOffset - 100; window.scrollTo({ top: y, behavior: 'smooth'});">Projects</button>
+            </span>
+            <span>
+            <button id="btn-contact" type="button" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth', block: 'center'});">Contact Me</button>
+            </span>
+        </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Introduction section -->
+        <section id="intro">
+            <h1>Hi! I'm Swopnil</h1>
+            <p>a software engineering student & web developer</p>
+            <!-- socials with font awesome icons -->
+            <span class="socials">
+            <a href="https://www.github.com/swopnil7" target="_blank" style="color: inherit;"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/swopnil-patil-1b0b2a1b6/" target="_blank" style="color: inherit;"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/swopnil_v07/" target="_blank" style="color: inherit;"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.twitter.com/rmswopnil07" target="_blank" style="color: inherit;"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.facebook.com/iamdeluded" target="_blank" style="color: inherit;"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.discord.com/users/Swopnil#0001" target="_blank" style="color: inherit;"><i class="fa-brands fa-discord"></i></a>
+            <a href="mailto:reporttoswopnil@gmail.com" target="_blank" style="color: inherit;"><i class="fa-solid fa-envelope"></i></a>
+            </span>
+            <button id="btn-down" type="button" onclick="const target = document.getElementById('skills'); const y = target.getBoundingClientRect().top + window.pageYOffset - 100; window.scrollTo({ top: y, behavior: 'smooth' });">
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+        </section>
+
+        <!-- Skills section -->
+        <section id="skills">
+            <h1>My Skills</h1>
+            <ul class="skills-list">
+                <li class="skill-box">
+                    <i class="fa-brands fa-python skill-icon"></i>
+                    <span>Python</span>
+                </li>
+                <li class="skill-box">
+                    <i class="fa-brands fa-html5 skill-icon"></i>
+                    <span>HTML</span>
+                </li>
+                <li class="skill-box">
+                    <i class="fa-brands fa-css3-alt skill-icon"></i>
+                    <span>CSS</span>
+                </li>
+                <li class="skill-box">
+                    <i class="fa-brands fa-js skill-icon"></i>
+                    <span>JavaScript</span>
+                </li>
+                <li class="skill-box">
+                    <i class="fa-brands fa-swift skill-icon"></i>
+                    <span>Swift</span>
+                </li>
+                <li class="skill-box">
+                    <i class="fa-brands fa-apple skill-icon"></i>
+                    <span>Objective-C</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Projects section -->
+        <section id="projects">
+            <h1>My works</h1>
+            <div class="project-holder gallery-auto">
+            <div class="project-card">
+                <div class="project-card-header">
+                    <div class="project-badge">Free</div>
+                    <img src="Images/ogpreview.png" alt="OG Bot Preview" class="project-image">
+                    <img src="Images/ogicon.png" alt="OG Icon" class="project-icon">
+                </div>
+                <div class="project-card-body">
+                    <h2 class="project-title">OG</h2>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                    </div>
+                    <p class="project-description">
+                        A Discord bot made exclusively for my class's discord server, featuring a variety of commands and utilities to enhance the server experience. It includes study tools, fun commands, and server management features.
+                        <br>
+                    </p>
+                    <div class="project-actions">
+                        <a href="https://github.com/swopnil7/The-OG" class="btn">View Work</a>
+                        <a href="https://discord.com/oauth2/authorize?client_id=1312086414162395248" class="btn btn-secondary" target="_blank">Invite Bot</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-header">
+                    <div class="project-badge">Free</div>
+                    <img src="Images/fndpreview.png" alt="FND Preview" class="project-image">
+                </div>
+                <div class="project-card-body">
+                    <h2 class="project-title">Fake News Detector</h2>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Flask</span>
+                    </div>
+                    <p class="project-description">
+                        A web application that uses machine learning to detect fake news articles. It analyzes the content & provides a prediction on its authenticity, helping users identify misinformation.
+                        <br>
+                    </p>
+                    <div class="project-actions">
+                        <a href="https://github.com/swopnil7/Fake_News_Detection_Model" class="btn">View Work</a>
+                        <a href="https://fakenewsdetectionmodel.streamlit.app/" class="btn btn-secondary" target="_blank">Live Page</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-header">
+                    <div class="project-badge">Free</div>
+                    <img src="Images/hangmanpreview.png" alt="Hangman Preview" class="project-image">
+                </div>
+                <div class="project-card-body">
+                    <h2 class="project-title">Hangman Game</h2>
+                    <div class="project-tags">
+                        <span class="tag">C</span>
+                        <span class="tag">C++</span>
+                        <span class="tag">SDL</span>
+                    </div>
+                    <p class="project-description">
+                        A simple hangman game built using C and a bit of C++ with SDL for graphics. Players guess letters to complete a word before running out of attempts, providing a fun way to practice programming skills.
+                        <br>
+                    </p>
+                    <div class="project-actions">
+                        <a href="https://github.com/swopnil7/Hangman-SDL-C" class="btn">View Work</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-header">
+                    <div class="project-badge">Free</div>
+                    <img src="Images/fndpreview.png" alt="FND Preview" class="project-image">
+                </div>
+                <div class="project-card-body">
+                    <h2 class="project-title">Fake News Detector</h2>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Flask</span>
+                    </div>
+                    <p class="project-description">
+                        A web application that uses machine learning to detect fake news articles. It analyzes the content & provides a prediction on its authenticity, helping users identify misinformation.
+                        <br>
+                    </p>
+                    <div class="project-actions">
+                        <a href="https://github.com/swopnil7/Fake_News_Detection_Model" class="btn">View Work</a>
+                        <a href="https://fakenewsdetectionmodel.streamlit.app/" class="btn btn-secondary" target="_blank">Live Page</a>
+                    </div>
+                </div>
+            </div>      
+            </div>    
+        </section>
+    </main>
+</body>
+</html>
