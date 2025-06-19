@@ -422,7 +422,6 @@ main {
 .btn-secondary:hover, .btn-secondary:focus {
     background: var(--lavender);
     color: var(--crust);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.16);
     transform: scale(1.05);
 }
 
