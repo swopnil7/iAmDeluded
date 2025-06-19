@@ -427,7 +427,6 @@ main {
 }
 
 /* Contact Section Styling */
-
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -661,8 +660,6 @@ footer {
     position: relative;
     z-index: 1000;
 }
-
-
 
 /* Responsive Styles */
 @media (max-width: 800px) {
