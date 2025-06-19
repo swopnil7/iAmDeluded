@@ -12,14 +12,14 @@
     <script src="https://kit.fontawesome.com/ebee46d46d.js" crossorigin="anonymous"></script>
     <header>
         <nav>
-        <!-- The logo and title of the portfolio -->
         <div class="logo">
             <img src="Images/Icon.png" alt="favicon" class="favicon">
             <div><h1 class="tt">Swopnil.</h1>
             <h4 class="st">Aka, iAmDeluded</h4>
             </div>
         </div>
-        <!-- Navigation links -->
+        
+        <!-- Buttons instead of links for smooth scrolling -->
         <div class="navlinks">
             <span>
             <button id="btn-intro" type="button" onclick="const target = document.getElementById('intro'); const y = target.getBoundingClientRect().top + window.pageYOffset - 100; window.scrollTo({ top: y, behavior: 'smooth'});">This is Me</button>
@@ -31,17 +31,18 @@
             <button id="btn-projects" type="button" onclick="const target = document.getElementById('projects'); const y = target.getBoundingClientRect().top + window.pageYOffset - 100; window.scrollTo({ top: y, behavior: 'smooth'});">Projects</button>
             </span>
             <span>
-            <button id="btn-contact" type="button" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth', block: 'center'});">Contact Me</button>
+            <button id="btn-contact" type="button" onclick="const target = document.getElementById('contact'); const y = target.getBoundingClientRect().top + window.pageYOffset - 100; window.scrollTo({ top: y, behavior: 'smooth'});">Contact Me</button>
             </span>
         </div>
         </nav>
     </header>
     <main>
+
         <!-- Introduction section -->
         <section id="intro">
             <h1>Hi! I'm Swopnil</h1>
-            <p>a software engineering student & web developer</p>
-            <!-- socials with font awesome icons -->
+            <p>A software engineering student & web developer</p>
+
             <span class="socials">
             <a href="https://www.github.com/swopnil7" target="_blank" style="color: inherit;"><i class="fa-brands fa-github"></i></a>
             <a href="https://www.linkedin.com/in/swopnil7/" target="_blank" style="color: inherit;"><i class="fa-brands fa-linkedin"></i></a>
@@ -49,7 +50,7 @@
             <a href="https://www.twitter.com/rmswopnil07" target="_blank" style="color: inherit;"><i class="fa-brands fa-twitter"></i></a>
             <a href="https://www.facebook.com/swopnil.adhikari.07" target="_blank" style="color: inherit;"><i class="fa-brands fa-facebook"></i></a>
             <a href="https://www.discordapp.com/users/873835805733421106" target="_blank" style="color: inherit;"><i class="fa-brands fa-discord"></i></a>
-            <a href="mailto:reporttoswopnil@gmail.com" target="_blank" style="color: inherit;"><i class="fa-solid fa-envelope"></i></a>
+            <a href="mailto:report2swopnil@gmail.com" target="_blank" style="color: inherit;"><i class="fa-solid fa-envelope"></i></a>
             </span>
             <button id="btn-down" type="button" onclick="const target = document.getElementById('skills'); const y = target.getBoundingClientRect().top + window.pageYOffset - 100; window.scrollTo({ top: y, behavior: 'smooth' });">
                 <i class="fa-solid fa-chevron-down"></i>
@@ -82,7 +83,7 @@
                 </li>
                 <li class="skill-box">
                     <i class="fa-brands fa-apple skill-icon"></i>
-                    <span>Objective-C</span>
+                    <span>Obj-C</span>
                 </li>
             </ul>
         </section>
@@ -158,27 +159,75 @@
             <div class="project-card">
                 <div class="project-card-header">
                     <div class="project-badge">Free</div>
-                    <img src="Images/fndpreview.png" alt="FND Preview" class="project-image">
+                    <img src="Images/dotspreview.png" alt="Dots Preview" class="project-image">
                 </div>
                 <div class="project-card-body">
-                    <h2 class="project-title">Fake News Detector</h2>
+                    <h2 class="project-title">Windots</h2>
                     <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Machine Learning</span>
-                        <span class="tag">Flask</span>
+                        <span class="tag">YAML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">INI</span>
                     </div>
                     <p class="project-description">
-                        A web application that uses machine learning to detect fake news articles. It analyzes the content & provides a prediction on its authenticity, helping users identify misinformation.
+                        Collection of my windows 11 dotfiles, including system-wide themes, app configs, icons, and system tweaks. Most of the dotfiles are written by me, while some are modified from other sources to suit my preferences.
                         <br>
                     </p>
                     <div class="project-actions">
-                        <a href="https://github.com/swopnil7/Fake_News_Detection_Model" class="btn">View Work</a>
-                        <a href="https://fakenewsdetectionmodel.streamlit.app/" class="btn btn-secondary" target="_blank">Live Page</a>
+                        <a href="https://github.com/swopnil7/Windots" class="btn">View Work</a>
                     </div>
                 </div>
             </div>      
             </div>    
         </section>
+
+        <!-- Contact section -->
+        <section id="contact">
+            <h1>Contact Me</h1>
+            <form class="contact-form">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="example@example.com" required>
+
+                <label for="topic">Topic</label>
+                <input type="text" id="topic" name="topic" placeholder="Inquiry" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Hey, I just wanted to know if..." required></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+        </section>
+
+        <!-- extra section -->
+        <section id="extra">
+            <div id="discord-module" class="discord-module">
+                <div class="discord-avatar-status">
+                    <img id="discord-avatar" class="discord-avatar" src="" alt="Discord Avatar">
+                    <span id="discord-status" class="discord-status-indicator"></span>
+                </div>
+                <div class="discord-info">
+                    <span id="discord-username" class="discord-username"></span>
+                    <span class="discord-discord">
+                        <i class="fa-brands fa-discord"></i> Discord
+                    </span>
+                    <div id="discord-status-text" class="discord-status-text"></div>
+                </div>
+            <div id="spotify-info" class="spotify-info" style="display:none;">Listening to Spotify
+                <img id="spotify-album" class="spotify-album" src="" alt="Album Art">
+                <div class="spotify-meta">
+                    <div id="spotify-song" class="spotify-song"></div>
+                    <div id="spotify-artist" class="spotify-artist"></div>
+                </div>
+            </div>
+            </div>
+            <p>Thanks for visiting my website!</p>
+            <p>Feel free to reach out if you have any questions or just want to say hi!</p>
+            <p>Have a great day!</p>
+        </section>
+        <footer>
+            <p>&copy; 2025 Swopnil</p>
+            <p>Made with <i class="fa-solid fa-heart"></i></p>
+            <p>Last updated: June 2025</p>
+        </footer>
     </main>
 </body>
 </html>

@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let animationId = null;
     let direction = 0; // -1 for left, 1 for right, 0 for none
     const edgeZone = 80; // px from edge to trigger scroll
-    const scrollSpeed = 3; // px per frame
+    const scrollSpeed = 5; // px per frame
 
     function scrollStep() {
         if (direction !== 0) {
@@ -84,3 +84,40 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+function updateDiscordStatus() {
+fetch('https://api.lanyard.rest/v1/users/873835805733421106')
+    .then(res => res.json())
+    .then(({ data }) => {
+        // Set avatar
+        const avatarUrl = `https://cdn.discordapp.com/avatars/${data.discord_user.id}/${data.discord_user.avatar}.png?size=128`;
+        document.getElementById('discord-avatar').src = avatarUrl;
+
+        // Set username
+        document.getElementById('discord-username').textContent =
+            data.discord_user.global_name || data.discord_user.username;
+
+        // Set status indicator color and text
+        const status = data.discord_status;
+        const statusIndicator = document.getElementById('discord-status');
+        const statusText = document.getElementById('discord-status-text');
+        let color = '#bdbdbd', text = 'Offline';
+        if (status === 'online') { color = '#43b581'; text = 'Online'; }
+        else if (status === 'idle') { color = '#ffbe3b'; text = 'Idle'; }
+        else if (status === 'dnd') { color = '#f04747'; text = 'Do Not Disturb'; }
+        statusIndicator.style.background = color;
+        statusText.textContent = `Status: ${text}`;
+
+        // Show Spotify info if listening
+        if (data.listening_to_spotify && data.spotify) {
+            document.getElementById('spotify-info').style.display = 'flex';
+            document.getElementById('spotify-album').src = data.spotify.album_art_url;
+            document.getElementById('spotify-song').textContent = data.spotify.song;
+            document.getElementById('spotify-artist').textContent = data.spotify.artist;
+        } else {
+            document.getElementById('spotify-info').style.display = 'none';
+        }
+    });
+}
+    updateDiscordStatus();
+    setInterval(updateDiscordStatus, 10000);
