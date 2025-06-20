@@ -521,21 +521,18 @@ main {
     padding: 10px 16px;
     line-height: 1.4;
     gap: 18px;
-    max-width: 520px;
-    width: 100%;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0 1px 6px rgba(30,32,46,0.12);
     font-family: 'Fira Code', monospace;
     color: var(--text);
-    transition: max-width 0.3s cubic-bezier(.4,0,.2,1);
+    transition: max-width 0.3s cubic-bezier(.4,0,.2,1), width 0.3s cubic-bezier(.4,0,.2,1);
     flex-wrap: nowrap;
     position: relative;
     min-height: 68px;
-}
-.discord-module.spotify-active {
-    max-width: 650px;
-    transition: max-width 0.3s cubic-bezier(.4,0,.2,1);
+    min-width: 200px;
+    width: max-content;
+    max-width: 100%;
 }
 .discord-avatar-status {
     position: relative;
@@ -601,12 +598,9 @@ main {
     color: var(--green);
     font-size: 0.9rem;
     min-width: 220px;
-    max-width: 320px;
+    max-width: 420px;
     transition: max-width 0.3s cubic-bezier(.4,0,.2,1);
     box-sizing: border-box;
-}
-.discord-module.spotify-active #spotify-info {
-    display: flex;
 }
 .spotify-album {
     width: 48px;
@@ -633,7 +627,7 @@ main {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 160px;
+    max-width: 260px;
 }
 .spotify-artist {
     color: var(--peach);
@@ -641,7 +635,7 @@ main {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 160px;
+    max-width: 260px;
 }
 
 footer {
